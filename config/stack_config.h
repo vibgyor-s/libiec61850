@@ -1,5 +1,5 @@
 /*
- * config.h
+ * config.h (template for cmake)
  *
  * Contains global defines to configure the stack. You need to recompile the stack to make
  * changes effective (make clean; make)
@@ -8,6 +8,12 @@
 
 #ifndef STACK_CONFIG_H_
 #define STACK_CONFIG_H_
+
+/* set to 0 for a little-endian target, 1 for a big-endian target */
+#define PLATFORM_IS_BIGENDIAN 0
+
+/* define if the system supports clock_gettime */
+#define CONFIG_SYSTEM_HAS_CLOCK_GETTIME
 
 /* include asserts if set to 1 */
 #define DEBUG 0
@@ -27,31 +33,20 @@
 #define DEBUG_SV_PUBLISHER 0
 #define DEBUG_HAL_ETHERNET 0
 
+/* 1 ==> server runs in single threaded mode (one dedicated thread for the server)
+ * 0 ==> server runs in multi threaded mode (one thread for each connection and
+ * one server background thread )
+ */
+#define CONFIG_MMS_SINGLE_THREADED 1
+
+/* Optimize stack for threadless operation - don't use semaphores */
+#define CONFIG_MMS_THREADLESS_STACK 0
+
 /* Maximum MMS PDU SIZE - default is 65000 */
 #define CONFIG_MMS_MAXIMUM_PDU_SIZE 65000
 
-/*
- * Enable single threaded mode
- *
- * 1 ==> server runs in single threaded mode (a single thread for the server and all client connections)
- * 0 ==> server runs in multi-threaded mode (one thread for each connection and
- * one server background thread )
- */
-#define CONFIG_MMS_SINGLE_THREADED 0
-
-#if (WITH_MBEDTLS == 1)
-#define CONFIG_MMS_SUPPORT_TLS 1
-#endif
-
-/*
- * Optimize stack for threadless operation - don't use semaphores
- *
- * WARNING: If set to 1 normal single- and multi-threaded server are no longer working!
- */
-#define CONFIG_MMS_THREADLESS_STACK 0
-
 /* number of concurrent MMS client connections the server accepts, -1 for no limit */
-#define CONFIG_MAXIMUM_TCP_CLIENT_CONNECTIONS 100
+#define CONFIG_MAXIMUM_TCP_CLIENT_CONNECTIONS 5
 
 /* activate TCP keep alive mechanism. 1 -> activate */
 #define CONFIG_ACTIVATE_TCP_KEEPALIVE 1
@@ -107,12 +102,7 @@
 /* The number of GOOSE retransmissions after an event */
 #define CONFIG_GOOSE_EVENT_RETRANSMISSION_COUNT 2
 
-/* Define if GOOSE control block elements are writable (1) or read-only (0)
- *
- * WARNING: To be compliant with the IEC 61850-8-1 standard all GoCB elements
- * but GoEna have to be read-only!
- *
- * */
+/* Define if GOOSE control block elements are writable (1) or read-only (0) */
 #define CONFIG_GOOSE_GOID_WRITABLE 0
 #define CONFIG_GOOSE_DATSET_WRITABLE 0
 #define CONFIG_GOOSE_CONFREV_WRITABLE 0
@@ -173,36 +163,39 @@
 /* Force memory alignment - required for some platforms (required more memory for buffered reporting) */
 #define CONFIG_IEC61850_FORCE_MEMORY_ALIGNMENT 1
 
-/* overwrite default results for MMS identify service */
-/* #define CONFIG_DEFAULT_MMS_VENDOR_NAME "libiec61850.com" */
-/* #define CONFIG_DEFAULT_MMS_MODEL_NAME "LIBIEC61850" */
-/* #define CONFIG_DEFAULT_MMS_REVISION "1.0.0" */
+/* default results for MMS identify service */
+#define CONFIG_DEFAULT_MMS_VENDOR_NAME "libiec61850.com"
+#define CONFIG_DEFAULT_MMS_MODEL_NAME "LIBIEC61850"
+#define CONFIG_DEFAULT_MMS_REVISION "1.5.2"
 
-/* MMS virtual file store base path - where MMS file services are looking for files */
+/* support flatted named variable name space required by IEC 61850-8-1 MMS mapping */
+#define CONFIG_MMS_SUPPORT_FLATTED_NAME_SPACE 1
+
+/* VMD scope named variables are not used by IEC 61850 */
+#define CONFIG_MMS_SUPPORT_VMD_SCOPE_NAMED_VARIABLES 0
+
+/* MMS virtual file store base path - where file services are looking for files */
 #define CONFIG_VIRTUAL_FILESTORE_BASEPATH "./vmd-filestore/"
 
 /* Maximum number of open file per MMS connection (for MMS file read service) */
 #define CONFIG_MMS_MAX_NUMBER_OF_OPEN_FILES_PER_CONNECTION 5
 
-/* Maximum number of the domain specific data sets - this also includes the static (pre-configured) and dynamic data sets */
 #define CONFIG_MMS_MAX_NUMBER_OF_DOMAIN_SPECIFIC_DATA_SETS 10
 
-/* Maximum number of association specific data sets */
 #define CONFIG_MMS_MAX_NUMBER_OF_ASSOCIATION_SPECIFIC_DATA_SETS 10
 
-/* Maximum number of VMD specific data sets */
 #define CONFIG_MMS_MAX_NUMBER_OF_VMD_SPECIFIC_DATA_SETS 10
 
 /* Maximum number of the members in a data set (named variable list) */
 #define CONFIG_MMS_MAX_NUMBER_OF_DATA_SET_MEMBERS 100
 
-/* maximum number of contemporary file upload tasks (obtainFile) per server instance */
+/* Maximum number of get file tasks */
 #define CONFIG_MMS_SERVER_MAX_GET_FILE_TASKS 5
 
 /* Definition of supported services */
 #define MMS_DEFAULT_PROFILE 1
 
-#if (MMS_DEFAULT_PROFILE == 1)
+#if MMS_DEFAULT_PROFILE
 #define MMS_READ_SERVICE 1
 #define MMS_WRITE_SERVICE 1
 #define MMS_GET_NAME_LIST 1
@@ -214,14 +207,10 @@
 #define MMS_STATUS_SERVICE 1
 #define MMS_IDENTIFY_SERVICE 1
 #define MMS_FILE_SERVICE 1
-#define MMS_OBTAIN_FILE_SERVICE 1 /* requires MMS_FILE_SERVICE */
-#define MMS_DELETE_FILE_SERVICE 1 /* requires MMS_FILE_SERVICE */
-#define MMS_RENAME_FILE_SERVICE 0 /* requires MMS_FILE_SERVICE */
+#define MMS_OBTAIN_FILE_SERVICE 1
+#define MMS_DELETE_FILE_SERVICE 1
+#define MMS_RENAME_FILE_SERVICE 0
 #endif /* MMS_DEFAULT_PROFILE */
-
-
-/* support flat named variable name space required by IEC 61850-8-1 MMS mapping */
-#define CONFIG_MMS_SUPPORT_FLATTED_NAME_SPACE 1
 
 /* Sort getNameList response according to the MMS specified collation order - this is required by the standard
  * Set to 0 only for performance reasons and when no certification is required! */
@@ -232,11 +221,11 @@
 /* use short FC defines as in old API */
 #define CONFIG_PROVIDE_OLD_FC_DEFINES 0
 
-/* Support user access to raw messages */
-#define CONFIG_MMS_RAW_MESSAGE_LOGGING 1
+/* Support user acccess to raw messages */
+#define CONFIG_MMS_RAW_MESSAGE_LOGGING 0
 
-/* Allow to set the virtual file store base path for MMS file services at runtime with the
- * MmsServer_setFilestoreBasepath function.
+/* Allow to set the virtual filestore basepath for MMS file services at runtime with the
+ * MmsServer_setFilestoreBasepath function
  */
 #define CONFIG_SET_FILESTORE_BASEPATH_AT_RUNTIME 1
 

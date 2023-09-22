@@ -1,0 +1,5 @@
+/home/pi/ws_vibsin/libiec61850/examples/GIS1/CMakeFiles/rebuild_cache.dir
+/home/pi/ws_vibsin/libiec61850/examples/GIS1/CMakeFiles/edit_cache.dir
+/home/pi/ws_vibsin/libiec61850/examples/GIS1/CMakeFiles/package_source.dir
+/home/pi/ws_vibsin/libiec61850/examples/GIS1/CMakeFiles/package.dir
+/home/pi/ws_vibsin/libiec61850/examples/GIS1/CMakeFiles/server_example_basic_io.dir

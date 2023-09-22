@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/ws_vibsin/libiec61850/examples/GIS1/server_example_basic_io.c
+iec61850_server.h
+/home/pi/ws_vibsin/libiec61850/examples/GIS1/iec61850_server.h
+hal_thread.h
+/home/pi/ws_vibsin/libiec61850/examples/GIS1/hal_thread.h
+signal.h
+-
+stdlib.h
+-
+stdio.h
+-
+math.h
+-
+static_model.h
+/home/pi/ws_vibsin/libiec61850/examples/GIS1/static_model.h
+
+/home/pi/ws_vibsin/libiec61850/examples/GIS1/static_model.c
+static_model.h
+/home/pi/ws_vibsin/libiec61850/examples/GIS1/static_model.h
+
+/home/pi/ws_vibsin/libiec61850/examples/GIS1/static_model.h
+stdlib.h
+-
+iec61850_model.h
+/home/pi/ws_vibsin/libiec61850/examples/GIS1/iec61850_model.h
+

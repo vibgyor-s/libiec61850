@@ -27,6 +27,10 @@ add_subdirectory(iec61850_client_example_files)
 add_subdirectory(iec61850_client_example_async)
 add_subdirectory(iec61850_client_file_async)
 
+add_subdirectory(GIS1)
+
+
+
 if (NOT WIN32)
     add_subdirectory(mms_utility)
 endif(NOT WIN32)

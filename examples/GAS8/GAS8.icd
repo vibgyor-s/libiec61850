@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SCL release="4" revision="B" version="2007" xmlns="http://www.iec.ch/61850/2003/SCL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Header id="TMW" version="1" toolID="TMW SCL Navigator" />
+	<Communication>
+		<SubNetwork name="SubNetworkName">
+			<ConnectedAP apName="AP" iedName="TEMPLATE">
+				<Address>
+					<P type="OSI-AP-Title">1,1,9999,1</P>
+					<P type="OSI-AE-Qualifier">12</P>
+					<P type="OSI-PSEL">00000001</P>
+					<P type="OSI-SSEL">0001</P>
+					<P type="OSI-TSEL">0001</P>
+				</Address>
+			</ConnectedAP>
+		</SubNetwork>
+	</Communication>
+  <IED name="TEMPLATE" manufacturer="TMW" configVersion="1.0" originalSclRelease="4" originalSclRevision="B" originalSclVersion="2007">
+    <Services nameLength="64">
+      <DynAssociation />
+      <GetDirectory />
+      <GetDataObjectDefinition />
+      <DataObjectDirectory />
+      <GetDataSetValue />
+      <DataSetDirectory />
+      <ConfDataSet modify="true" maxAttributes="50" max="50" />
+      <DynDataSet maxAttributes="100" max="50" />
+      <ReadWrite />
+      <ConfReportControl bufConf="true" bufMode="both" max="50" />
+      <GetCBValues />
+      <ReportSettings rptID="Dyn" optFields="Dyn" bufTime="Dyn" trgOps="Dyn" intgPd="Dyn" resvTms="true" owner="true" cbName="Conf" datSet="Dyn" />
+      <LogSettings logEna="Dyn" trgOps="Dyn" intgPd="Dyn" cbName="Conf" datSet="Dyn" />
+      <GSESettings appID="Conf" dataLabel="Conf" cbName="Conf" datSet="Conf" />
+      <GOOSE max="10" />
+      <FileHandling />
+      <ConfLNs fixPrefix="true" />
+      <ConfLdName />
+      <ConfSigRef max="100" />
+      <ValueHandling />
+    </Services>
+    <AccessPoint name="AP">
+      <Server>
+        <Authentication />
+        <LDevice inst="CTRL">
+          <LN0 lnType="SIMG_TYPE" lnClass="SIMG" inst="1" prefix="" />
+          <LN lnType="SIMG_TYPE" lnClass="SIMG" inst="2" prefix="" />
+          <LN lnType="SIMG_TYPE" lnClass="SIMG" inst="3" prefix="" />
+          <LN lnType="SIMG_TYPE" lnClass="SIMG" inst="4" prefix="" />
+          <LN lnType="SIMG_TYPE" lnClass="SIMG" inst="5" prefix="" />
+          <LN lnType="SIMG_TYPE" lnClass="SIMG" inst="6" prefix="" />
+          <LN lnType="SIMG_TYPE" lnClass="SIMG" inst="7" prefix="" />
+          <LN lnType="SIMG_TYPE" lnClass="SIMG" inst="8" prefix="" />
+        </LDevice>
+      </Server>
+      <Services />
+    </AccessPoint>
+  </IED>
+  <DataTypeTemplates>
+    
+    
+    <LNodeType id="SIMG_TYPE" lnClass="SIMG">
+      <DO name="Beh" type="ENS_BehaviourModeKind" />
+      <DO name="InsAlm" type="SPS" />
+      <DO name="Pres" type="MV" />
+      <DO name="PresAlm" type="SPS" />
+    </LNodeType>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <DOType id="ENS_BehaviourModeKind" cdc="ENS">
+      <DA name="stVal" bType="Enum" type="BehaviourModeKind" fc="ST" />
+      <DA name="q" bType="Quality" fc="ST" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+    </DOType>
+    <DOType id="SPS" cdc="SPS">
+      <DA name="stVal" bType="BOOLEAN" fc="ST" />
+      <DA name="q" bType="Quality" fc="ST" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+    </DOType>
+    <DOType id="MV" cdc="MV">
+      <DA name="mag" bType="Struct" type="AnalogueValue" fc="MX" />
+      <DA name="q" bType="Quality" fc="MX" />
+      <DA name="t" bType="Timestamp" fc="MX" />
+    </DOType>
+    
+    
+    
+    <DAType id="AnalogueValue">
+      <BDA name="f" bType="FLOAT32" />
+    </DAType>
+    <EnumType id="BehaviourModeKind">
+      <EnumVal ord="1">on</EnumVal>
+      <EnumVal ord="2">blocked</EnumVal>
+      <EnumVal ord="3">test</EnumVal>
+      <EnumVal ord="4">test/blocked</EnumVal>
+      <EnumVal ord="5">off</EnumVal>
+    </EnumType>
+    
+    
+    
+  </DataTypeTemplates>
+</SCL>

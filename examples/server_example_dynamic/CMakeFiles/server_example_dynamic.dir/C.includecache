@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/ws_vibsin/libiec61850/examples/server_example_dynamic/server_example_dynamic.c
+/home/pi/ws/libiec61850/examples/server_example_dynamic/server_example_dynamic.c
 iec61850_server.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_dynamic/iec61850_server.h
+/home/pi/ws/libiec61850/examples/server_example_dynamic/iec61850_server.h
 hal_thread.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_dynamic/hal_thread.h
+/home/pi/ws/libiec61850/examples/server_example_dynamic/hal_thread.h
 signal.h
 -
 stdlib.h

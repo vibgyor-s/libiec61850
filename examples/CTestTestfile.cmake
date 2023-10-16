@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/pi/ws_vibsin/libiec61850/examples
-# Build directory: /home/pi/ws_vibsin/libiec61850/examples
+# Source directory: /home/pi/ws/libiec61850/examples
+# Build directory: /home/pi/ws/libiec61850/examples
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
@@ -32,6 +32,7 @@ subdirs("iec61850_client_example_files")
 subdirs("iec61850_client_example_async")
 subdirs("iec61850_client_file_async")
 subdirs("GIS1")
+subdirs("GIS8")
 subdirs("mms_utility")
 subdirs("server_example_goose")
 subdirs("goose_observer")

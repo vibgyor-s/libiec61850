@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/ws_vibsin/libiec61850/examples/server_example_simple/server_example_simple.c
+/home/pi/ws/libiec61850/examples/server_example_simple/server_example_simple.c
 iec61850_server.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_simple/iec61850_server.h
+/home/pi/ws/libiec61850/examples/server_example_simple/iec61850_server.h
 hal_thread.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_simple/hal_thread.h
+/home/pi/ws/libiec61850/examples/server_example_simple/hal_thread.h
 signal.h
 -
 stdlib.h
@@ -18,17 +18,17 @@ stdlib.h
 stdio.h
 -
 static_model.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_simple/static_model.h
+/home/pi/ws/libiec61850/examples/server_example_simple/static_model.h
 
-/home/pi/ws_vibsin/libiec61850/examples/server_example_simple/static_model.c
+/home/pi/ws/libiec61850/examples/server_example_simple/static_model.c
 static_model.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_simple/static_model.h
+/home/pi/ws/libiec61850/examples/server_example_simple/static_model.h
 
-/home/pi/ws_vibsin/libiec61850/examples/server_example_simple/static_model.h
+/home/pi/ws/libiec61850/examples/server_example_simple/static_model.h
 stdlib.h
 -
 iec61850_model.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_simple/iec61850_model.h
+/home/pi/ws/libiec61850/examples/server_example_simple/iec61850_model.h
 
 hal/inc/hal_base.h
 stdlib.h

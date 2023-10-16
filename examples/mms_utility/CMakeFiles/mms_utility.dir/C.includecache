@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/ws_vibsin/libiec61850/examples/mms_utility/mms_utility.c
+/home/pi/ws/libiec61850/examples/mms_utility/mms_utility.c
 stdlib.h
 -
 stdio.h
@@ -14,13 +14,13 @@ stdio.h
 unistd.h
 -
 string_utilities.h
-/home/pi/ws_vibsin/libiec61850/examples/mms_utility/string_utilities.h
+/home/pi/ws/libiec61850/examples/mms_utility/string_utilities.h
 iec61850_common.h
-/home/pi/ws_vibsin/libiec61850/examples/mms_utility/iec61850_common.h
+/home/pi/ws/libiec61850/examples/mms_utility/iec61850_common.h
 mms_client_connection.h
-/home/pi/ws_vibsin/libiec61850/examples/mms_utility/mms_client_connection.h
+/home/pi/ws/libiec61850/examples/mms_utility/mms_client_connection.h
 conversions.h
-/home/pi/ws_vibsin/libiec61850/examples/mms_utility/conversions.h
+/home/pi/ws/libiec61850/examples/mms_utility/conversions.h
 
 hal/inc/hal_base.h
 stdlib.h

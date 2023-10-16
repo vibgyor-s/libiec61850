@@ -1,4 +1,4 @@
-# Install script for directory: /home/pi/ws_vibsin/libiec61850/pyiec61850
+# Install script for directory: /home/pi/ws/libiec61850/pyiec61850
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -51,7 +51,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/lib/python3/dist-packages" TYPE FILE FILES "/home/pi/ws_vibsin/libiec61850/pyiec61850/iec61850.py")
+file(INSTALL DESTINATION "/usr/lib/python3/dist-packages" TYPE FILE FILES "/home/pi/ws/libiec61850/pyiec61850/iec61850.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -69,12 +69,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/lib/python3/dist-packages" TYPE MODULE FILES "/home/pi/ws_vibsin/libiec61850/pyiec61850/_iec61850.so")
+file(INSTALL DESTINATION "/usr/lib/python3/dist-packages" TYPE MODULE FILES "/home/pi/ws/libiec61850/pyiec61850/_iec61850.so")
   if(EXISTS "$ENV{DESTDIR}/usr/lib/python3/dist-packages/_iec61850.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib/python3/dist-packages/_iec61850.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/usr/lib/python3/dist-packages/_iec61850.so"
-         OLD_RPATH "/home/pi/ws_vibsin/libiec61850/src:"
+         OLD_RPATH "/home/pi/ws/libiec61850/src:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/lib/python3/dist-packages/_iec61850.so")

@@ -62,10 +62,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/ws_vibsin/libiec61850
+CMAKE_SOURCE_DIR = /home/pi/ws/libiec61850
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/ws_vibsin/libiec61850
+CMAKE_BINARY_DIR = /home/pi/ws/libiec61850
 
 # Include any dependencies generated for this target.
 include examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/depend.make
@@ -78,29 +78,29 @@ include examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/
 
 examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/server_example_sg.c.o: examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/flags.make
 examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/server_example_sg.c.o: examples/server_example_setting_groups/server_example_sg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ws_vibsin/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/server_example_sg.c.o"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server_example_sg.dir/server_example_sg.c.o -c /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups/server_example_sg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ws/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/server_example_sg.c.o"
+	cd /home/pi/ws/libiec61850/examples/server_example_setting_groups && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server_example_sg.dir/server_example_sg.c.o -c /home/pi/ws/libiec61850/examples/server_example_setting_groups/server_example_sg.c
 
 examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/server_example_sg.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server_example_sg.dir/server_example_sg.c.i"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups/server_example_sg.c > CMakeFiles/server_example_sg.dir/server_example_sg.c.i
+	cd /home/pi/ws/libiec61850/examples/server_example_setting_groups && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/ws/libiec61850/examples/server_example_setting_groups/server_example_sg.c > CMakeFiles/server_example_sg.dir/server_example_sg.c.i
 
 examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/server_example_sg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server_example_sg.dir/server_example_sg.c.s"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups/server_example_sg.c -o CMakeFiles/server_example_sg.dir/server_example_sg.c.s
+	cd /home/pi/ws/libiec61850/examples/server_example_setting_groups && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/ws/libiec61850/examples/server_example_setting_groups/server_example_sg.c -o CMakeFiles/server_example_sg.dir/server_example_sg.c.s
 
 examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/static_model.c.o: examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/flags.make
 examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/static_model.c.o: examples/server_example_setting_groups/static_model.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ws_vibsin/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/static_model.c.o"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server_example_sg.dir/static_model.c.o -c /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups/static_model.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ws/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/static_model.c.o"
+	cd /home/pi/ws/libiec61850/examples/server_example_setting_groups && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server_example_sg.dir/static_model.c.o -c /home/pi/ws/libiec61850/examples/server_example_setting_groups/static_model.c
 
 examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/static_model.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server_example_sg.dir/static_model.c.i"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups/static_model.c > CMakeFiles/server_example_sg.dir/static_model.c.i
+	cd /home/pi/ws/libiec61850/examples/server_example_setting_groups && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/ws/libiec61850/examples/server_example_setting_groups/static_model.c > CMakeFiles/server_example_sg.dir/static_model.c.i
 
 examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/static_model.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server_example_sg.dir/static_model.c.s"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups/static_model.c -o CMakeFiles/server_example_sg.dir/static_model.c.s
+	cd /home/pi/ws/libiec61850/examples/server_example_setting_groups && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/ws/libiec61850/examples/server_example_setting_groups/static_model.c -o CMakeFiles/server_example_sg.dir/static_model.c.s
 
 # Object files for target server_example_sg
 server_example_sg_OBJECTS = \
@@ -116,8 +116,8 @@ examples/server_example_setting_groups/server_example_sg: examples/server_exampl
 examples/server_example_setting_groups/server_example_sg: src/libiec61850.a
 examples/server_example_setting_groups/server_example_sg: hal/libhal.a
 examples/server_example_setting_groups/server_example_sg: examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/ws_vibsin/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable server_example_sg"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server_example_sg.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/ws/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable server_example_sg"
+	cd /home/pi/ws/libiec61850/examples/server_example_setting_groups && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server_example_sg.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/build: examples/server_example_setting_groups/server_example_sg
@@ -125,10 +125,10 @@ examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/build: e
 .PHONY : examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/build
 
 examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/clean:
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups && $(CMAKE_COMMAND) -P CMakeFiles/server_example_sg.dir/cmake_clean.cmake
+	cd /home/pi/ws/libiec61850/examples/server_example_setting_groups && $(CMAKE_COMMAND) -P CMakeFiles/server_example_sg.dir/cmake_clean.cmake
 .PHONY : examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/clean
 
 examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/depend:
-	cd /home/pi/ws_vibsin/libiec61850 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/ws_vibsin/libiec61850 /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups /home/pi/ws_vibsin/libiec61850 /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups /home/pi/ws_vibsin/libiec61850/examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/ws/libiec61850 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/ws/libiec61850 /home/pi/ws/libiec61850/examples/server_example_setting_groups /home/pi/ws/libiec61850 /home/pi/ws/libiec61850/examples/server_example_setting_groups /home/pi/ws/libiec61850/examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/server_example_setting_groups/CMakeFiles/server_example_sg.dir/depend
 

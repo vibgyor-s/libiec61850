@@ -67,10 +67,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/ws_vibsin/libiec61850
+CMAKE_SOURCE_DIR = /home/pi/ws/libiec61850
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/ws_vibsin/libiec61850
+CMAKE_BINARY_DIR = /home/pi/ws/libiec61850
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,17 +99,6 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -120,6 +109,28 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/pi/ws/libiec61850/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
 
 # Special rule for the target install
 install: preinstall
@@ -133,17 +144,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Development\" \"Libraries\" \"Unspecified\""
@@ -154,16 +154,16 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target package_source
-package_source:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/pi/ws_vibsin/libiec61850/CPackSourceConfig.cmake
-.PHONY : package_source
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target package_source
-package_source/fast: package_source
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : package_source/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target package
 package: preinstall
@@ -178,9 +178,9 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/ws_vibsin/libiec61850/CMakeFiles /home/pi/ws_vibsin/libiec61850//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/ws/libiec61850/CMakeFiles /home/pi/ws/libiec61850//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/ws_vibsin/libiec61850/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/ws/libiec61850/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -586,6 +586,19 @@ server_example_gis/fast:
 .PHONY : server_example_gis/fast
 
 #=============================================================================
+# Target rules for targets named server_gis_8
+
+# Build rule for target.
+server_gis_8: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server_gis_8
+.PHONY : server_gis_8
+
+# fast build rule for target.
+server_gis_8/fast:
+	$(MAKE) $(MAKESILENT) -f examples/GIS8/CMakeFiles/server_gis_8.dir/build.make examples/GIS8/CMakeFiles/server_gis_8.dir/build
+.PHONY : server_gis_8/fast
+
+#=============================================================================
 # Target rules for targets named mms_utility
 
 # Build rule for target.
@@ -808,6 +821,7 @@ help:
 	@echo "... server_example_substitution"
 	@echo "... server_example_threadless"
 	@echo "... server_example_write_handler"
+	@echo "... server_gis_8"
 	@echo "... sv_9_2_LE_example"
 	@echo "... sv_publisher_example"
 	@echo "... sv_subscriber_example"

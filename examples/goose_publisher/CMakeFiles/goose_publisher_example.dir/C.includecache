@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/ws_vibsin/libiec61850/examples/goose_publisher/goose_publisher_example.c
+/home/pi/ws/libiec61850/examples/goose_publisher/goose_publisher_example.c
 stdint.h
 -
 stdlib.h
@@ -18,11 +18,11 @@ stdbool.h
 stdio.h
 -
 mms_value.h
-/home/pi/ws_vibsin/libiec61850/examples/goose_publisher/mms_value.h
+/home/pi/ws/libiec61850/examples/goose_publisher/mms_value.h
 goose_publisher.h
-/home/pi/ws_vibsin/libiec61850/examples/goose_publisher/goose_publisher.h
+/home/pi/ws/libiec61850/examples/goose_publisher/goose_publisher.h
 hal_thread.h
-/home/pi/ws_vibsin/libiec61850/examples/goose_publisher/hal_thread.h
+/home/pi/ws/libiec61850/examples/goose_publisher/hal_thread.h
 
 hal/inc/hal_base.h
 stdlib.h

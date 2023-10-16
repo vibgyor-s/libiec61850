@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/ws_vibsin/libiec61850/examples/goose_observer/goose_observer.c
+/home/pi/ws/libiec61850/examples/goose_observer/goose_observer.c
 goose_receiver.h
-/home/pi/ws_vibsin/libiec61850/examples/goose_observer/goose_receiver.h
+/home/pi/ws/libiec61850/examples/goose_observer/goose_receiver.h
 goose_subscriber.h
-/home/pi/ws_vibsin/libiec61850/examples/goose_observer/goose_subscriber.h
+/home/pi/ws/libiec61850/examples/goose_observer/goose_subscriber.h
 hal_thread.h
-/home/pi/ws_vibsin/libiec61850/examples/goose_observer/hal_thread.h
+/home/pi/ws/libiec61850/examples/goose_observer/hal_thread.h
 signal.h
 -
 stdio.h

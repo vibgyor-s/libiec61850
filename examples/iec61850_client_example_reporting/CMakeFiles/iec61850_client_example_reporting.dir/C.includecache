@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_reporting/client_example_reporting.c
+/home/pi/ws/libiec61850/examples/iec61850_client_example_reporting/client_example_reporting.c
 iec61850_client.h
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_reporting/iec61850_client.h
+/home/pi/ws/libiec61850/examples/iec61850_client_example_reporting/iec61850_client.h
 stdlib.h
 -
 stdio.h
@@ -18,7 +18,7 @@ signal.h
 time.h
 -
 hal_thread.h
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_reporting/hal_thread.h
+/home/pi/ws/libiec61850/examples/iec61850_client_example_reporting/hal_thread.h
 
 hal/inc/hal_base.h
 stdlib.h

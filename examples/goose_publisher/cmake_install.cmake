@@ -1,4 +1,4 @@
-# Install script for directory: /home/pi/ws_vibsin/libiec61850/examples/goose_publisher
+# Install script for directory: /home/pi/ws/libiec61850/examples/goose_publisher
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

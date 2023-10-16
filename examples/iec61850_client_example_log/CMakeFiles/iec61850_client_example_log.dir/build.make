@@ -62,10 +62,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/ws_vibsin/libiec61850
+CMAKE_SOURCE_DIR = /home/pi/ws/libiec61850
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/ws_vibsin/libiec61850
+CMAKE_BINARY_DIR = /home/pi/ws/libiec61850
 
 # Include any dependencies generated for this target.
 include examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/depend.make
@@ -78,16 +78,16 @@ include examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_
 
 examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.o: examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/flags.make
 examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.o: examples/iec61850_client_example_log/client_example_log.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ws_vibsin/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.o"
-	cd /home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_log && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.o -c /home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_log/client_example_log.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ws/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.o"
+	cd /home/pi/ws/libiec61850/examples/iec61850_client_example_log && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.o -c /home/pi/ws/libiec61850/examples/iec61850_client_example_log/client_example_log.c
 
 examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.i"
-	cd /home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_log && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_log/client_example_log.c > CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.i
+	cd /home/pi/ws/libiec61850/examples/iec61850_client_example_log && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/ws/libiec61850/examples/iec61850_client_example_log/client_example_log.c > CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.i
 
 examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.s"
-	cd /home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_log && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_log/client_example_log.c -o CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.s
+	cd /home/pi/ws/libiec61850/examples/iec61850_client_example_log && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/ws/libiec61850/examples/iec61850_client_example_log/client_example_log.c -o CMakeFiles/iec61850_client_example_log.dir/client_example_log.c.s
 
 # Object files for target iec61850_client_example_log
 iec61850_client_example_log_OBJECTS = \
@@ -101,8 +101,8 @@ examples/iec61850_client_example_log/iec61850_client_example_log: examples/iec61
 examples/iec61850_client_example_log/iec61850_client_example_log: src/libiec61850.a
 examples/iec61850_client_example_log/iec61850_client_example_log: hal/libhal.a
 examples/iec61850_client_example_log/iec61850_client_example_log: examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/ws_vibsin/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable iec61850_client_example_log"
-	cd /home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_log && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/iec61850_client_example_log.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/ws/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable iec61850_client_example_log"
+	cd /home/pi/ws/libiec61850/examples/iec61850_client_example_log && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/iec61850_client_example_log.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/build: examples/iec61850_client_example_log/iec61850_client_example_log
@@ -110,10 +110,10 @@ examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/
 .PHONY : examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/build
 
 examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/clean:
-	cd /home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_log && $(CMAKE_COMMAND) -P CMakeFiles/iec61850_client_example_log.dir/cmake_clean.cmake
+	cd /home/pi/ws/libiec61850/examples/iec61850_client_example_log && $(CMAKE_COMMAND) -P CMakeFiles/iec61850_client_example_log.dir/cmake_clean.cmake
 .PHONY : examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/clean
 
 examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/depend:
-	cd /home/pi/ws_vibsin/libiec61850 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/ws_vibsin/libiec61850 /home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_log /home/pi/ws_vibsin/libiec61850 /home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_log /home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/ws/libiec61850 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/ws/libiec61850 /home/pi/ws/libiec61850/examples/iec61850_client_example_log /home/pi/ws/libiec61850 /home/pi/ws/libiec61850/examples/iec61850_client_example_log /home/pi/ws/libiec61850/examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/iec61850_client_example_log/CMakeFiles/iec61850_client_example_log.dir/depend
 

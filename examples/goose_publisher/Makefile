@@ -67,10 +67,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/ws_vibsin/libiec61850
+CMAKE_SOURCE_DIR = /home/pi/ws/libiec61850
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/ws_vibsin/libiec61850
+CMAKE_BINARY_DIR = /home/pi/ws/libiec61850
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,17 +99,6 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -120,6 +109,28 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	cd /home/pi/ws/libiec61850 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/pi/ws/libiec61850/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
 
 # Special rule for the target install
 install: preinstall
@@ -133,17 +144,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Development\" \"Libraries\" \"Unspecified\""
@@ -154,21 +154,21 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target package_source
-package_source:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/pi/ws_vibsin/libiec61850 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/pi/ws_vibsin/libiec61850/CPackSourceConfig.cmake
-.PHONY : package_source
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target package_source
-package_source/fast: package_source
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : package_source/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/pi/ws_vibsin/libiec61850 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/pi/ws/libiec61850 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -178,14 +178,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/pi/ws_vibsin/libiec61850 && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/ws_vibsin/libiec61850/CMakeFiles /home/pi/ws_vibsin/libiec61850/examples/goose_publisher//CMakeFiles/progress.marks
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/goose_publisher/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/ws_vibsin/libiec61850/CMakeFiles 0
+	cd /home/pi/ws/libiec61850 && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/ws/libiec61850/CMakeFiles /home/pi/ws/libiec61850/examples/goose_publisher//CMakeFiles/progress.marks
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/goose_publisher/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/ws/libiec61850/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/goose_publisher/clean
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/goose_publisher/clean
 .PHONY : clean
 
 # The main clean target
@@ -195,22 +195,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/goose_publisher/preinstall
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/goose_publisher/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/goose_publisher/preinstall
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/goose_publisher/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/pi/ws_vibsin/libiec61850 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/pi/ws/libiec61850 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/rule:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/rule
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/rule
 .PHONY : examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/rule
 
 # Convenience name for target.
@@ -220,7 +220,7 @@ goose_publisher_example: examples/goose_publisher/CMakeFiles/goose_publisher_exa
 
 # fast build rule for target.
 goose_publisher_example/fast:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/build.make examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/build
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/build.make examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/build
 .PHONY : goose_publisher_example/fast
 
 goose_publisher_example.o: goose_publisher_example.c.o
@@ -229,7 +229,7 @@ goose_publisher_example.o: goose_publisher_example.c.o
 
 # target to build an object file
 goose_publisher_example.c.o:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/build.make examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/goose_publisher_example.c.o
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/build.make examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/goose_publisher_example.c.o
 .PHONY : goose_publisher_example.c.o
 
 goose_publisher_example.i: goose_publisher_example.c.i
@@ -238,7 +238,7 @@ goose_publisher_example.i: goose_publisher_example.c.i
 
 # target to preprocess a source file
 goose_publisher_example.c.i:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/build.make examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/goose_publisher_example.c.i
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/build.make examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/goose_publisher_example.c.i
 .PHONY : goose_publisher_example.c.i
 
 goose_publisher_example.s: goose_publisher_example.c.s
@@ -247,7 +247,7 @@ goose_publisher_example.s: goose_publisher_example.c.s
 
 # target to generate assembly for a file
 goose_publisher_example.c.s:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/build.make examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/goose_publisher_example.c.s
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/build.make examples/goose_publisher/CMakeFiles/goose_publisher_example.dir/goose_publisher_example.c.s
 .PHONY : goose_publisher_example.c.s
 
 # Help Target
@@ -280,6 +280,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/pi/ws_vibsin/libiec61850 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/pi/ws/libiec61850 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

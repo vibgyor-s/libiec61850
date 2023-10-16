@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example2/client_example2.c" "/home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example2/CMakeFiles/iec61850_client_example2.dir/client_example2.c.o"
+  "/home/pi/ws/libiec61850/examples/iec61850_client_example2/client_example2.c" "/home/pi/ws/libiec61850/examples/iec61850_client_example2/CMakeFiles/iec61850_client_example2.dir/client_example2.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -26,8 +26,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/pi/ws_vibsin/libiec61850/src/CMakeFiles/iec61850.dir/DependInfo.cmake"
-  "/home/pi/ws_vibsin/libiec61850/hal/CMakeFiles/hal.dir/DependInfo.cmake"
+  "/home/pi/ws/libiec61850/src/CMakeFiles/iec61850.dir/DependInfo.cmake"
+  "/home/pi/ws/libiec61850/hal/CMakeFiles/hal.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

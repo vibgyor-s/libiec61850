@@ -27,11 +27,11 @@
 /usr/local/include/libiec61850/sv_subscriber.h
 /usr/local/include/libiec61850/sv_publisher.h
 /usr/local/include/libiec61850/logging_api.h
-/usr/local/lib/arm-linux-gnueabihf/libhal.a
-/usr/local/lib/arm-linux-gnueabihf/libhal-shared.a
+/usr/local/lib/aarch64-linux-gnu/libhal.a
+/usr/local/lib/aarch64-linux-gnu/libhal-shared.a
 /usr/local/share/pkgconfig/libiec61850.pc
-/usr/local/lib/arm-linux-gnueabihf/libiec61850.a
-/usr/local/lib/arm-linux-gnueabihf/libiec61850.so.1.5.2
-/usr/local/lib/arm-linux-gnueabihf/libiec61850.so
+/usr/local/lib/aarch64-linux-gnu/libiec61850.a
+/usr/local/lib/aarch64-linux-gnu/libiec61850.so.1.5.2
+/usr/local/lib/aarch64-linux-gnu/libiec61850.so
 /usr/lib/python3/dist-packages/iec61850.py
 /usr/lib/python3/dist-packages/_iec61850.so

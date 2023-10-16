@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/ws_vibsin/libiec61850/examples/server_example_write_handler/server_example_write_handler.c
+/home/pi/ws/libiec61850/examples/server_example_write_handler/server_example_write_handler.c
 iec61850_server.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_write_handler/iec61850_server.h
+/home/pi/ws/libiec61850/examples/server_example_write_handler/iec61850_server.h
 hal_thread.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_write_handler/hal_thread.h
+/home/pi/ws/libiec61850/examples/server_example_write_handler/hal_thread.h
 signal.h
 -
 stdlib.h
@@ -18,17 +18,17 @@ stdlib.h
 stdio.h
 -
 static_model.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_write_handler/static_model.h
+/home/pi/ws/libiec61850/examples/server_example_write_handler/static_model.h
 
-/home/pi/ws_vibsin/libiec61850/examples/server_example_write_handler/static_model.c
+/home/pi/ws/libiec61850/examples/server_example_write_handler/static_model.c
 static_model.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_write_handler/static_model.h
+/home/pi/ws/libiec61850/examples/server_example_write_handler/static_model.h
 
-/home/pi/ws_vibsin/libiec61850/examples/server_example_write_handler/static_model.h
+/home/pi/ws/libiec61850/examples/server_example_write_handler/static_model.h
 stdlib.h
 -
 iec61850_model.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_write_handler/iec61850_model.h
+/home/pi/ws/libiec61850/examples/server_example_write_handler/iec61850_model.h
 
 hal/inc/hal_base.h
 stdlib.h

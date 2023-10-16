@@ -1,4 +1,4 @@
-# Install script for directory: /home/pi/ws_vibsin/libiec61850/examples/mms_utility
+# Install script for directory: /home/pi/ws/libiec61850/examples/mms_utility
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

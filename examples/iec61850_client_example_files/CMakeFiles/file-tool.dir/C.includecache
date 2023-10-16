@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_files/file-tool.c
+/home/pi/ws/libiec61850/examples/iec61850_client_example_files/file-tool.c
 iec61850_client.h
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example_files/iec61850_client.h
+/home/pi/ws/libiec61850/examples/iec61850_client_example_files/iec61850_client.h
 stdlib.h
 -
 stdio.h

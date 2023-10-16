@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example5/client_example5.c
+/home/pi/ws/libiec61850/examples/iec61850_client_example5/client_example5.c
 iec61850_client.h
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example5/iec61850_client.h
+/home/pi/ws/libiec61850/examples/iec61850_client_example5/iec61850_client.h
 stdlib.h
 -
 stdio.h
 -
 hal_thread.h
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_client_example5/hal_thread.h
+/home/pi/ws/libiec61850/examples/iec61850_client_example5/hal_thread.h
 
 hal/inc/hal_base.h
 stdlib.h

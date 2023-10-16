@@ -67,10 +67,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/ws_vibsin/libiec61850
+CMAKE_SOURCE_DIR = /home/pi/ws/libiec61850
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/ws_vibsin/libiec61850
+CMAKE_BINARY_DIR = /home/pi/ws/libiec61850
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,28 +87,38 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+.PHONY : edit_cache/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-.PHONY : rebuild_cache/fast
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	cd /home/pi/ws/libiec61850 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/pi/ws/libiec61850/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
 
 # Special rule for the target install
 install: preinstall
@@ -122,17 +132,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Development\" \"Libraries\" \"Unspecified\""
@@ -143,21 +142,21 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target package_source
-package_source:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/pi/ws_vibsin/libiec61850 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/pi/ws_vibsin/libiec61850/CPackSourceConfig.cmake
-.PHONY : package_source
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target package_source
-package_source/fast: package_source
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : package_source/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/pi/ws_vibsin/libiec61850 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/pi/ws/libiec61850 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -165,27 +164,28 @@ package/fast: package
 
 .PHONY : package/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/pi/ws_vibsin/libiec61850 && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/ws_vibsin/libiec61850/CMakeFiles /home/pi/ws_vibsin/libiec61850/examples/server_example_substitution//CMakeFiles/progress.marks
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/server_example_substitution/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/ws_vibsin/libiec61850/CMakeFiles 0
+	cd /home/pi/ws/libiec61850 && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/ws/libiec61850/CMakeFiles /home/pi/ws/libiec61850/examples/server_example_substitution//CMakeFiles/progress.marks
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/server_example_substitution/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/ws/libiec61850/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/server_example_substitution/clean
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/server_example_substitution/clean
 .PHONY : clean
 
 # The main clean target
@@ -195,22 +195,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/server_example_substitution/preinstall
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/server_example_substitution/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/server_example_substitution/preinstall
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/server_example_substitution/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/pi/ws_vibsin/libiec61850 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/pi/ws/libiec61850 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/rule:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/rule
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/rule
 .PHONY : examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/rule
 
 # Convenience name for target.
@@ -220,7 +220,7 @@ server_example_substitution: examples/server_example_substitution/CMakeFiles/ser
 
 # fast build rule for target.
 server_example_substitution/fast:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build
 .PHONY : server_example_substitution/fast
 
 server_example_substitution.o: server_example_substitution.c.o
@@ -229,7 +229,7 @@ server_example_substitution.o: server_example_substitution.c.o
 
 # target to build an object file
 server_example_substitution.c.o:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/server_example_substitution.c.o
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/server_example_substitution.c.o
 .PHONY : server_example_substitution.c.o
 
 server_example_substitution.i: server_example_substitution.c.i
@@ -238,7 +238,7 @@ server_example_substitution.i: server_example_substitution.c.i
 
 # target to preprocess a source file
 server_example_substitution.c.i:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/server_example_substitution.c.i
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/server_example_substitution.c.i
 .PHONY : server_example_substitution.c.i
 
 server_example_substitution.s: server_example_substitution.c.s
@@ -247,7 +247,7 @@ server_example_substitution.s: server_example_substitution.c.s
 
 # target to generate assembly for a file
 server_example_substitution.c.s:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/server_example_substitution.c.s
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/server_example_substitution.c.s
 .PHONY : server_example_substitution.c.s
 
 static_model.o: static_model.c.o
@@ -256,7 +256,7 @@ static_model.o: static_model.c.o
 
 # target to build an object file
 static_model.c.o:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/static_model.c.o
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/static_model.c.o
 .PHONY : static_model.c.o
 
 static_model.i: static_model.c.i
@@ -265,7 +265,7 @@ static_model.i: static_model.c.i
 
 # target to preprocess a source file
 static_model.c.i:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/static_model.c.i
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/static_model.c.i
 .PHONY : static_model.c.i
 
 static_model.s: static_model.c.s
@@ -274,7 +274,7 @@ static_model.s: static_model.c.s
 
 # target to generate assembly for a file
 static_model.c.s:
-	cd /home/pi/ws_vibsin/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/static_model.c.s
+	cd /home/pi/ws/libiec61850 && $(MAKE) $(MAKESILENT) -f examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/build.make examples/server_example_substitution/CMakeFiles/server_example_substitution.dir/static_model.c.s
 .PHONY : static_model.c.s
 
 # Help Target
@@ -310,6 +310,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/pi/ws_vibsin/libiec61850 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/pi/ws/libiec61850 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

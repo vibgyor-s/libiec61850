@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/ws_vibsin/libiec61850/examples/server_example_config_file/server_example_config_file.c
+/home/pi/ws/libiec61850/examples/server_example_config_file/server_example_config_file.c
 iec61850_server.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_config_file/iec61850_server.h
+/home/pi/ws/libiec61850/examples/server_example_config_file/iec61850_server.h
 hal_thread.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_config_file/hal_thread.h
+/home/pi/ws/libiec61850/examples/server_example_config_file/hal_thread.h
 signal.h
 -
 stdlib.h
@@ -18,7 +18,7 @@ stdlib.h
 stdio.h
 -
 iec61850_config_file_parser.h
-/home/pi/ws_vibsin/libiec61850/examples/server_example_config_file/iec61850_config_file_parser.h
+/home/pi/ws/libiec61850/examples/server_example_config_file/iec61850_config_file_parser.h
 
 hal/inc/hal_base.h
 stdlib.h

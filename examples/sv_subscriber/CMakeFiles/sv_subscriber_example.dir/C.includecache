@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/ws_vibsin/libiec61850/examples/sv_subscriber/sv_subscriber_example.c
+/home/pi/ws/libiec61850/examples/sv_subscriber/sv_subscriber_example.c
 hal_thread.h
-/home/pi/ws_vibsin/libiec61850/examples/sv_subscriber/hal_thread.h
+/home/pi/ws/libiec61850/examples/sv_subscriber/hal_thread.h
 signal.h
 -
 stdio.h
 -
 sv_subscriber.h
-/home/pi/ws_vibsin/libiec61850/examples/sv_subscriber/sv_subscriber.h
+/home/pi/ws/libiec61850/examples/sv_subscriber/sv_subscriber.h
 
 hal/inc/hal_base.h
 stdlib.h

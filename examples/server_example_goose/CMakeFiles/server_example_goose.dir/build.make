@@ -62,10 +62,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/ws_vibsin/libiec61850
+CMAKE_SOURCE_DIR = /home/pi/ws/libiec61850
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/ws_vibsin/libiec61850
+CMAKE_BINARY_DIR = /home/pi/ws/libiec61850
 
 # Include any dependencies generated for this target.
 include examples/server_example_goose/CMakeFiles/server_example_goose.dir/depend.make
@@ -78,29 +78,29 @@ include examples/server_example_goose/CMakeFiles/server_example_goose.dir/flags.
 
 examples/server_example_goose/CMakeFiles/server_example_goose.dir/server_example_goose.c.o: examples/server_example_goose/CMakeFiles/server_example_goose.dir/flags.make
 examples/server_example_goose/CMakeFiles/server_example_goose.dir/server_example_goose.c.o: examples/server_example_goose/server_example_goose.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ws_vibsin/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object examples/server_example_goose/CMakeFiles/server_example_goose.dir/server_example_goose.c.o"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_goose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server_example_goose.dir/server_example_goose.c.o -c /home/pi/ws_vibsin/libiec61850/examples/server_example_goose/server_example_goose.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ws/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object examples/server_example_goose/CMakeFiles/server_example_goose.dir/server_example_goose.c.o"
+	cd /home/pi/ws/libiec61850/examples/server_example_goose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server_example_goose.dir/server_example_goose.c.o -c /home/pi/ws/libiec61850/examples/server_example_goose/server_example_goose.c
 
 examples/server_example_goose/CMakeFiles/server_example_goose.dir/server_example_goose.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server_example_goose.dir/server_example_goose.c.i"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_goose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/ws_vibsin/libiec61850/examples/server_example_goose/server_example_goose.c > CMakeFiles/server_example_goose.dir/server_example_goose.c.i
+	cd /home/pi/ws/libiec61850/examples/server_example_goose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/ws/libiec61850/examples/server_example_goose/server_example_goose.c > CMakeFiles/server_example_goose.dir/server_example_goose.c.i
 
 examples/server_example_goose/CMakeFiles/server_example_goose.dir/server_example_goose.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server_example_goose.dir/server_example_goose.c.s"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_goose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/ws_vibsin/libiec61850/examples/server_example_goose/server_example_goose.c -o CMakeFiles/server_example_goose.dir/server_example_goose.c.s
+	cd /home/pi/ws/libiec61850/examples/server_example_goose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/ws/libiec61850/examples/server_example_goose/server_example_goose.c -o CMakeFiles/server_example_goose.dir/server_example_goose.c.s
 
 examples/server_example_goose/CMakeFiles/server_example_goose.dir/static_model.c.o: examples/server_example_goose/CMakeFiles/server_example_goose.dir/flags.make
 examples/server_example_goose/CMakeFiles/server_example_goose.dir/static_model.c.o: examples/server_example_goose/static_model.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ws_vibsin/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object examples/server_example_goose/CMakeFiles/server_example_goose.dir/static_model.c.o"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_goose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server_example_goose.dir/static_model.c.o -c /home/pi/ws_vibsin/libiec61850/examples/server_example_goose/static_model.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ws/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object examples/server_example_goose/CMakeFiles/server_example_goose.dir/static_model.c.o"
+	cd /home/pi/ws/libiec61850/examples/server_example_goose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server_example_goose.dir/static_model.c.o -c /home/pi/ws/libiec61850/examples/server_example_goose/static_model.c
 
 examples/server_example_goose/CMakeFiles/server_example_goose.dir/static_model.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server_example_goose.dir/static_model.c.i"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_goose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/ws_vibsin/libiec61850/examples/server_example_goose/static_model.c > CMakeFiles/server_example_goose.dir/static_model.c.i
+	cd /home/pi/ws/libiec61850/examples/server_example_goose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/ws/libiec61850/examples/server_example_goose/static_model.c > CMakeFiles/server_example_goose.dir/static_model.c.i
 
 examples/server_example_goose/CMakeFiles/server_example_goose.dir/static_model.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server_example_goose.dir/static_model.c.s"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_goose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/ws_vibsin/libiec61850/examples/server_example_goose/static_model.c -o CMakeFiles/server_example_goose.dir/static_model.c.s
+	cd /home/pi/ws/libiec61850/examples/server_example_goose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/ws/libiec61850/examples/server_example_goose/static_model.c -o CMakeFiles/server_example_goose.dir/static_model.c.s
 
 # Object files for target server_example_goose
 server_example_goose_OBJECTS = \
@@ -116,8 +116,8 @@ examples/server_example_goose/server_example_goose: examples/server_example_goos
 examples/server_example_goose/server_example_goose: src/libiec61850.a
 examples/server_example_goose/server_example_goose: hal/libhal.a
 examples/server_example_goose/server_example_goose: examples/server_example_goose/CMakeFiles/server_example_goose.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/ws_vibsin/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable server_example_goose"
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_goose && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server_example_goose.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/ws/libiec61850/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable server_example_goose"
+	cd /home/pi/ws/libiec61850/examples/server_example_goose && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server_example_goose.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/server_example_goose/CMakeFiles/server_example_goose.dir/build: examples/server_example_goose/server_example_goose
@@ -125,10 +125,10 @@ examples/server_example_goose/CMakeFiles/server_example_goose.dir/build: example
 .PHONY : examples/server_example_goose/CMakeFiles/server_example_goose.dir/build
 
 examples/server_example_goose/CMakeFiles/server_example_goose.dir/clean:
-	cd /home/pi/ws_vibsin/libiec61850/examples/server_example_goose && $(CMAKE_COMMAND) -P CMakeFiles/server_example_goose.dir/cmake_clean.cmake
+	cd /home/pi/ws/libiec61850/examples/server_example_goose && $(CMAKE_COMMAND) -P CMakeFiles/server_example_goose.dir/cmake_clean.cmake
 .PHONY : examples/server_example_goose/CMakeFiles/server_example_goose.dir/clean
 
 examples/server_example_goose/CMakeFiles/server_example_goose.dir/depend:
-	cd /home/pi/ws_vibsin/libiec61850 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/ws_vibsin/libiec61850 /home/pi/ws_vibsin/libiec61850/examples/server_example_goose /home/pi/ws_vibsin/libiec61850 /home/pi/ws_vibsin/libiec61850/examples/server_example_goose /home/pi/ws_vibsin/libiec61850/examples/server_example_goose/CMakeFiles/server_example_goose.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/ws/libiec61850 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/ws/libiec61850 /home/pi/ws/libiec61850/examples/server_example_goose /home/pi/ws/libiec61850 /home/pi/ws/libiec61850/examples/server_example_goose /home/pi/ws/libiec61850/examples/server_example_goose/CMakeFiles/server_example_goose.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/server_example_goose/CMakeFiles/server_example_goose.dir/depend
 

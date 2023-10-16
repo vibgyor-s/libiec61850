@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_9_2_LE_example/iec61850_9_2_LE_example.c
+/home/pi/ws/libiec61850/examples/iec61850_9_2_LE_example/iec61850_9_2_LE_example.c
 iec61850_server.h
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_9_2_LE_example/iec61850_server.h
+/home/pi/ws/libiec61850/examples/iec61850_9_2_LE_example/iec61850_server.h
 sv_publisher.h
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_9_2_LE_example/sv_publisher.h
+/home/pi/ws/libiec61850/examples/iec61850_9_2_LE_example/sv_publisher.h
 hal_thread.h
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_9_2_LE_example/hal_thread.h
+/home/pi/ws/libiec61850/examples/iec61850_9_2_LE_example/hal_thread.h
 signal.h
 -
 stdlib.h
@@ -22,17 +22,17 @@ stdio.h
 math.h
 -
 static_model.h
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_9_2_LE_example/static_model.h
+/home/pi/ws/libiec61850/examples/iec61850_9_2_LE_example/static_model.h
 
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_9_2_LE_example/static_model.c
+/home/pi/ws/libiec61850/examples/iec61850_9_2_LE_example/static_model.c
 static_model.h
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_9_2_LE_example/static_model.h
+/home/pi/ws/libiec61850/examples/iec61850_9_2_LE_example/static_model.h
 
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_9_2_LE_example/static_model.h
+/home/pi/ws/libiec61850/examples/iec61850_9_2_LE_example/static_model.h
 stdlib.h
 -
 iec61850_model.h
-/home/pi/ws_vibsin/libiec61850/examples/iec61850_9_2_LE_example/iec61850_model.h
+/home/pi/ws/libiec61850/examples/iec61850_9_2_LE_example/iec61850_model.h
 
 hal/inc/hal_base.h
 stdlib.h

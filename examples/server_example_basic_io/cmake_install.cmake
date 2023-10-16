@@ -1,4 +1,4 @@
-# Install script for directory: /home/pi/ws_vibsin/libiec61850/examples/server_example_basic_io
+# Install script for directory: /home/pi/ws/libiec61850/examples/server_example_basic_io
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

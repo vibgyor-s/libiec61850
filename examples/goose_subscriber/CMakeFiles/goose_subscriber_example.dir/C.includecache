@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/ws_vibsin/libiec61850/examples/goose_subscriber/goose_subscriber_example.c
+/home/pi/ws/libiec61850/examples/goose_subscriber/goose_subscriber_example.c
 goose_receiver.h
-/home/pi/ws_vibsin/libiec61850/examples/goose_subscriber/goose_receiver.h
+/home/pi/ws/libiec61850/examples/goose_subscriber/goose_receiver.h
 goose_subscriber.h
-/home/pi/ws_vibsin/libiec61850/examples/goose_subscriber/goose_subscriber.h
+/home/pi/ws/libiec61850/examples/goose_subscriber/goose_subscriber.h
 hal_thread.h
-/home/pi/ws_vibsin/libiec61850/examples/goose_subscriber/hal_thread.h
+/home/pi/ws/libiec61850/examples/goose_subscriber/hal_thread.h
 linked_list.h
-/home/pi/ws_vibsin/libiec61850/examples/goose_subscriber/linked_list.h
+/home/pi/ws/libiec61850/examples/goose_subscriber/linked_list.h
 stdlib.h
 -
 stdio.h

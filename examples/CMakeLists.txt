@@ -28,7 +28,7 @@ add_subdirectory(iec61850_client_example_async)
 add_subdirectory(iec61850_client_file_async)
 
 add_subdirectory(GIS1)
-
+add_subdirectory(GIS8)
 
 
 if (NOT WIN32)
